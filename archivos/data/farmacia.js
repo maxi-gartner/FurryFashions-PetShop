@@ -16,7 +16,7 @@ fetch(url)
   seccionFarmacia.innerHTML = crearFarmacia
   function crearMasFarmacia(farmaciaCarta) {
     return `
-      <div class="card" style="width: 18rem;">
+      <div class="card carta-farmacia"" style="width: 18rem;">
         <img src="${farmaciaCarta.imagen}" class="cartaFarmacia card-img-top p-2" alt="img">
         <div class="card-body">
           <p class="pfarmacia1">${farmaciaCarta.disponibles === 0 ? "sin unidades" : "disponible"}</p>
@@ -26,7 +26,33 @@ fetch(url)
         </div>
       </div>`;
   }
-  
+  const cartasFarmacia = document.querySelectorAll('.carta-farmacia');
+
+cartasFarmacia.forEach(carta => {
+  carta.addEventListener('click', () => {
+    const modalFarmacia = document.getElementById("modalFarmacia");
+    const modalTitulo = document.getElementById("modal-titulo");
+    const modalImagen = document.getElementById("modal-imagen");
+    const modalDescripcion = document.getElementById("modal-descripcion");
+    const modalPrecio = document.getElementById("modal-precio");
+    const modalUnidades = document.getElementById("modal-unidades");
+    const farmaciaCarta = farmaciaPetShop.find(objeto => objeto.producto === carta.querySelector(".card-title").textContent);
+
+    modalTitulo.textContent = farmaciaCarta.producto;
+    modalImagen.src = farmaciaCarta.imagen;
+    modalDescripcion.textContent = farmaciaCarta.descripcion;
+    modalPrecio.textContent = `Precio: $${farmaciaCarta.precio}`;
+    modalUnidades.textContent = `Unidades: ${farmaciaCarta.disponibles}`;
+
+    modalFarmacia.style.display = "block";
+  });
+});
+const cerrarModal = document.querySelector('.close');
+const modalFarmacia = document.getElementById("modalFarmacia");
+
+cerrarModal.addEventListener('click', () => {
+  modalFarmacia.style.display = "none";
+});
 
 
 
