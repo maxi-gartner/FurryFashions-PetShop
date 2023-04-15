@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navColor{
+    background-color: #ffa9e9;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+.img1{
+    width: 20%;
+}
+
+.navC{
+    width: 5rem;
+}
+
+.h1Class{
+    font-family: 'Dancing Script', cursive;
+}
