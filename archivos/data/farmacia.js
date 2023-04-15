@@ -12,14 +12,32 @@ fetch(url)
    for (let i = 0; i < 7; i++) {
     crearFarmacia += crearMasFarmacia(farmaciaPetShop[i]);
   }
-const carrito = []
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+
 
 console.log(carrito)
   const seccionFarmacia = document.getElementById(`sectionFarmacia`)
   seccionFarmacia.innerHTML = crearFarmacia
   function crearMasFarmacia(farmaciaCarta) {
     let unidadesTexto = "Unidades disponibles";
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     
+ 
+    for (let item of carrito) {
+      if (item.producto === farmaciaCarta.producto) {
+        farmaciaCarta.disponibles -= 1;
+      }
+    }
+    
+    if (farmaciaCarta.disponibles <= 0) {
+      unidadesTexto = "Sin unidades";
+    } else if (farmaciaCarta.disponibles === 1) {
+      unidadesTexto = "Última unidad disponible";
+    } else if (farmaciaCarta.disponibles <= 3) {
+      unidadesTexto = `Últimas ${farmaciaCarta.disponibles} unidades`;
+    }
+  
     return `
       <div class="card carta-farmacia"" style="width: 18rem;">
         <img src="${farmaciaCarta.imagen}" class="cartaFarmacia card-img-top p-2" alt="img">
@@ -27,11 +45,11 @@ console.log(carrito)
           <p class="pfarmacia1">${unidadesTexto}</p>
           <h5 class="card-title">${farmaciaCarta.producto}</h5>
           <h6 class="card-text">Precio: $${farmaciaCarta.precio}</h6>
-          <p class="pfarmacia2">unidades: ${farmaciaCarta.disponibles}</p>
+          <p class="pfarmacia2">Unidades: ${farmaciaCarta.disponibles}</p>
           <button class="buttonAnadir" data-producto="${farmaciaCarta.producto}"> Añadir al carro</button>
-          
         </div>
-      </div>`;
+      </div>
+    `;
   }
   const cartasFarmacia = document.querySelectorAll('.carta-farmacia');
   cartasFarmacia.forEach(carta => {
@@ -44,6 +62,10 @@ console.log(carrito)
         carrito.push(item);
         item.disponibles--;
         actualizarUnidades(item);
+        //paso el array a string
+       /*  const json = JSON.stringify(carrito) */
+       
+       localStorage.setItem("carrito", JSON.stringify(carrito));
       }
     })
     })
