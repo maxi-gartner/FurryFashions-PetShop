@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cartaFarmacia
+{
+    border: 2px solid red;
+}
+.card
+{
+    border: 2px solid yellow;
+}
+.card-body
+{
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card-title
+{
+    border: 2px solid red;
+}
+.card-text
+{
+    border: 2px solid grey;
+}
+.pfarmacia2
+{
+    border: 2px solid salmon;
+}
+.pfarmacia1
+{
+    border: 2px solid salmon;
+}
