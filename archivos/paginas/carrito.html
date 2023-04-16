@@ -10,19 +10,15 @@
 </head>
 <body>
         <main class="main-cart">
-            <div class="cart">
-                <div class="cartNumber" id="cartNumber">
-                </div>
+            <div class="cart" id="cartConteiner">
+                <div class="cartNumber" id="cartNumber"></div>
                 <div class="separator"></div>
                 <div class="allItem" id="cart"></div>
-                <div class="fullShipment" id="fullShipment">
-                    <p></p>
-                </div>
+                <div class="fullShipment" id="fullShipment"></div>
                 <div class="separator"></div>
                 <div class="purchase">
                     <a class="btn btn-primary" id="buttomPurchase" role="button" data-bs-toggle="button">Comprar</a>
                 </div>
-            </div>
     </main>
     <template id="templateCartItem">
         <div class="item">
@@ -35,14 +31,14 @@
                 <p class="price"></p>
                 <div class="buttomsItem">
                     <a class="btn btn-primary delet" role="button" data-bs-toggle="button">Borrar</a>
-                    <a href="../index.html" class="btn btn-primary" role="button" data-bs-toggle="button">Mas Productos</a>
+                    <a href="../../index.html" class="btn btn-primary">Mas Productos</a>
                 </div>
             </div>
             <div class="counterItem">
                 <div class="subtrtactAndAdd">
-                    <a href="#" class="btn btn-secondary subtractItem" role="button" data-bs-toggle="button">-</a>
+                    <button href="#" class="btn btn-secondary subtractItem">-</button>
                     <p class="quantity">N°</p>
-                    <a href="#" class="btn btn-secondary addItem" role="button" data-bs-toggle="button">+</a>
+                    <button href="#" class="btn btn-secondary addItem">+</button>
                     <div class="stock">
                     </div>
                 </div>
