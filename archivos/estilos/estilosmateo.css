@@ -10,54 +10,66 @@ body
   background-size: cover;
   
 }
+.buttonAnadir
+{
+  background-color: #ff9fb3;
+}
 .cartaFarmacia
 {
-    border: 2px solid red;
-}
-.card
-{
-    border: 2px solid yellow;
+  
+    border-radius: 20px 20px 0px 0px !important;
+    background-color: #e4fff9;
+    
+  }
+  .card
+  {
    
+
     box-shadow: rgba(150, 16, 148, 0.25) 0px 54px 55px, rgba(227, 13, 255, 0.12) 0px -12px 30px, rgba(219, 15, 255, 0.12) 0px 4px 6px, rgba(209, 25, 255, 0.17) 0px 12px 13px, rgba(168, 3, 223, 0.09) 0px -3px 5px;
 }
 .cartaFarmacia
 {
   min-height: 35vh;
-
+  background-color: #005ad898 ;
 }
 .card-body
 {
-    border: 2px solid blue;
-    display: flex;
     
+    display: flex;
+    background-color: #005ad898 ;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 0px 0px 20px 20px !important;
 }
 .card-title
 {
-    border: 2px solid red;
+   
     font-weight: bold;
     text-align: center;
 }
 .card-text
 {
-    border: 2px solid grey;
-    color: #ffa9e9;
+   
+    color: white;
 }
 .pfarmacia2
 {
-    border: 2px solid salmon;
+   color: white;
 }
 .pfarmacia1
 {
-    border: 2px solid salmon;
+   
     border-radius: 20px;
     text-align: center;
     color: white;
-    font-weight: bold;
+     font-weight: 600;
+     padding: 5px 8px;
+    
 }
 .carta-farmacia {
     transition: transform 0.2s;
+
+    border-radius: 20px !important;
   }
   
   .carta-farmacia:hover {
@@ -82,7 +94,7 @@ body
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid #888;
     width: 80%;
     
@@ -96,7 +108,7 @@ body
     float: right;
     font-size: 28px;
     font-weight: bold;
-    border: 2px solid blue;
+   
   }
   
   .close:hover,
@@ -107,23 +119,51 @@ body
 
   }
   .modal-small .modal-content {
-    max-width: 100rem;
-    display: flex;
-    flex-direction: row;
+    max-width: 80rem;
+   display: flex;
+   flex-direction: row;
     border: 2px solid red;
- 
+   border-radius: 20px;
+   background-color: #fd5daf;
   }
+  .modalPadre
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    
+
+  }
+  .modalPadre h2
+  {
+    font-size: 3rem;
+  }
+  #modal-descripcion
+  {
+    overflow: auto;
+    margin: 10px;
+    max-height: 20rem;
+  }
+  #modal-imagen
+  {
+    width: 30%; 
+    margin: 1rem 5rem;
+    height: 50vh;
+    object-fit: contain;
+   }
   .buttonAnadir {
     display: inline-block;
-    padding: 12px 24px;
-    border: 1px solid #4f4f4f;
-    border-radius: 4px;
+    padding: 10px 10px;
+    border-radius: 20px;
     transition: all 0.2s ease-in;
     position: relative;
     overflow: hidden;
     font-size: 19px;
     color: black;
     z-index: 1;
+    font-weight: bold;
+  
    }
    
    .buttonAnadir:before {
@@ -178,7 +218,8 @@ body
     flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
-    border: 2px solid yellowgreen;
+    padding: 2rem;
+  
     width: 80%;
     margin-left: 10rem;
    }

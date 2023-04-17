@@ -46,9 +46,9 @@ console.log(carrito)
   }
   
     return `
-      <div class="card carta-farmacia"" style="width: 18rem;">
-        <img src="${farmaciaCarta.imagen}" class="cartaFarmacia card-img-top p-2" alt="img">
-        <div class="card-body">
+      <div class="card carta-farmacia" style="width: 18rem;">
+        <img src="${farmaciaCarta.imagen}" class="cartaFarmacia  card-img-top p-1" alt="img">
+        <div class="card-body ">
           <p class="pfarmacia1 ${unidadesTextoClass} ">${unidadesTexto}</p>
           <h5 class="card-title">${farmaciaCarta.producto}</h5>
           <h6 class="card-text">Precio: $${farmaciaCarta.precio}</h6>
