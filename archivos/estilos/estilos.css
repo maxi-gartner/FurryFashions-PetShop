@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body{
+    background: url(https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .navColor{
     background-color: #ffa9e9;
 }
@@ -27,4 +33,38 @@ nav{
 
 .car{
     height: 70vh;
+}
+
+.carruelImg{
+    height: 40vh;
+}
+
+.bor{
+    margin: 0 !important;
+}
+
+#myCarousel {
+    max-height: 500px;
+    margin: auto;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 15%;
+    height: 80%;
+}
+
+footer{  
+    background-color: #ffa9e9;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    height: 8.4vh;
+}
+
+.face{
+    width: 2vw;
+    height: 4vh;
 }
