@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+body
+{
+  background: url(https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
 .cartaFarmacia
 {
     border: 2px solid red;
@@ -10,21 +17,32 @@
 .card
 {
     border: 2px solid yellow;
+   
+    box-shadow: rgba(150, 16, 148, 0.25) 0px 54px 55px, rgba(227, 13, 255, 0.12) 0px -12px 30px, rgba(219, 15, 255, 0.12) 0px 4px 6px, rgba(209, 25, 255, 0.17) 0px 12px 13px, rgba(168, 3, 223, 0.09) 0px -3px 5px;
+}
+.cartaFarmacia
+{
+  min-height: 35vh;
+
 }
 .card-body
 {
     border: 2px solid blue;
     display: flex;
+    
     flex-direction: column;
     justify-content: space-around;
 }
 .card-title
 {
     border: 2px solid red;
+    font-weight: bold;
+    text-align: center;
 }
 .card-text
 {
     border: 2px solid grey;
+    color: #ffa9e9;
 }
 .pfarmacia2
 {
@@ -33,6 +51,10 @@
 .pfarmacia1
 {
     border: 2px solid salmon;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 .carta-farmacia {
     transition: transform 0.2s;
@@ -53,16 +75,19 @@
     height: 10%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    
   }
   
   /* Contenido del box modal */
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 20px;
+    padding: 2rem;
     border: 1px solid #888;
     width: 80%;
+    
     border: 2px solid salmon;
+   
   }
   
   /* Botón de cierre */
@@ -82,10 +107,11 @@
 
   }
   .modal-small .modal-content {
-    max-width: 30rem;
-    width: 100%;
+    max-width: 100rem;
+    display: flex;
+    flex-direction: row;
     border: 2px solid red;
-    
+ 
   }
   .buttonAnadir {
     display: inline-block;
@@ -145,4 +171,14 @@
     top: -45%;
     background-color: #39bda7;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+   }
+   .sectionFarmaciaCartas
+   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    border: 2px solid yellowgreen;
+    width: 80%;
+    margin-left: 10rem;
    }

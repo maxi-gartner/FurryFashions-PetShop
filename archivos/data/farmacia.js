@@ -31,24 +31,28 @@ console.log(carrito)
       farmaciaCartaCopy.disponibles -= 1;
     }
   }
-  
+  let unidadesTextoClass = ""
   if (farmaciaCartaCopy.disponibles <= 0) {
     unidadesTexto = "Sin unidades";
+    unidadesTextoClass = "bg-danger";
   } else if (farmaciaCartaCopy.disponibles === 1) {
     unidadesTexto = "Última unidad disponible";
+    unidadesTextoClass = "bg-danger";
   } else if (farmaciaCartaCopy.disponibles <= 3) {
-    unidadesTexto = `Últimas ${farmaciaCartaCopy.disponibles} unidades`;
+    unidadesTexto = `Últimas unidades`;
+    unidadesTextoClass = "bg-danger";
+  } else {
+    unidadesTextoClass = "bg-success";
   }
-  
   
     return `
       <div class="card carta-farmacia"" style="width: 18rem;">
         <img src="${farmaciaCarta.imagen}" class="cartaFarmacia card-img-top p-2" alt="img">
         <div class="card-body">
-          <p class="pfarmacia1">${unidadesTexto}</p>
+          <p class="pfarmacia1 ${unidadesTextoClass} ">${unidadesTexto}</p>
           <h5 class="card-title">${farmaciaCarta.producto}</h5>
           <h6 class="card-text">Precio: $${farmaciaCarta.precio}</h6>
-          <p class="pfarmacia2">Unidades: ${farmaciaCarta.disponibles}</p>
+          <p class="pfarmacia2">Unidades: ${farmaciaCartaCopy.disponibles}</p>
           <button class="buttonAnadir" data-producto="${farmaciaCarta.producto}"> Añadir al carro</button>
         </div>
       </div>
@@ -117,28 +121,45 @@ function actualizarUnidades(item) {
       const unidadesTexto = carta.querySelector('.pfarmacia1');
       if (item.disponibles === 0) {
         unidadesTexto.textContent = 'sin unidades';
+        unidadesTexto.classList.remove('bg-success');
+        unidadesTexto.classList.add('bg-danger');
         const boton = carta.querySelector('.buttonAnadir');
         boton.disabled = true;
       } else if (item.disponibles === 1) {
         unidadesTexto.textContent = 'última unidad disponible';
-      } else if(farmaciaCarta.disponibles <= 3 && farmaciaCarta.disponibles > 1) {
-        unidadesTexto.textContent = `últimas ${item.disponibles} unidades`;
+        unidadesTexto.classList.remove('bg-success');
+        unidadesTexto.classList.add('bg-danger');
+      } else if (item.disponibles <= 3) {
+        unidadesTexto.textContent = `últimas unidades`;
+        unidadesTexto.classList.remove('bg-success');
+        unidadesTexto.classList.add('bg-danger');
+      } 
+      else {
+        
+        unidadesTexto.classList.remove('bg-danger');
+        unidadesTexto.classList.add('bg-success');
       }
-    
     }
   });
 }
 const barraDeBusquedaValor = document.getElementById('search-input');
+
 barraDeBusquedaValor.addEventListener('input', () => {
   const  busquedaValor = barraDeBusquedaValor.value.toLowerCase();
   const  cartasFarmaciaFiltradas = farmaciaPetShop.filter((farmaciaPetShop) =>{
    return farmaciaPetShop.producto.toLowerCase().includes(busquedaValor);
-  
   });
-  const seccionFarmacia = document.getElementById(`sectionFarmacia`)
-  seccionFarmacia.innerHTML = '';
-  for (let i = 0; i <  cartasFarmaciaFiltradas.length; i++) {
-    seccionFarmacia.innerHTML += crearMasFarmacia( cartasFarmaciaFiltradas[i]);
+
+  const seccionFarmacia = document.getElementById(`sectionFarmacia`);
+  
+  // Si no se encontraron resultados, se crea un elemento h5
+  if (cartasFarmaciaFiltradas.length === 0) {
+    seccionFarmacia.innerHTML = '<h5>No se encontraron resultados</h5>';
+  } else {
+    seccionFarmacia.innerHTML = '';
+    for (let i = 0; i <  cartasFarmaciaFiltradas.length; i++) {
+      seccionFarmacia.innerHTML += crearMasFarmacia( cartasFarmaciaFiltradas[i]);
+    }
   }
   
   const cartasFarmacia = document.querySelectorAll('.carta-farmacia');
