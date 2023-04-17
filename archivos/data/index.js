@@ -15,94 +15,66 @@ function eventosUP(evento) {
   carrusel.innerHTML = `<div class="carousel-item active">
                           <div class="row">
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[0]}" alt="Primera imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[0]}" alt="Primera imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[1]}" alt="Segunda imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[1]}" alt="Segunda imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[2]}" alt="Tercera imagen">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="row">
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[3]}" alt="Cuarta imagen">
-                            </div>
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[4]}" alt="Quinta imagen">
-                            </div>
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[5]}" alt="Sexta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[2]}" alt="Tercera imagen">
                             </div>
                           </div>
                         </div>
                         <div class="carousel-item">
                           <div class="row">
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[6]}" alt="Cuarta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[3]}" alt="Cuarta imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[7]}" alt="Quinta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[4]}" alt="Quinta imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[8]}" alt="Sexta imagen">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="carousel-item">
-                          <div class="row">
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[9]}" alt="Cuarta imagen">
-                            </div>
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[10]}" alt="Quinta imagen">
-                            </div>
-                            <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[11]}" alt="Sexta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[5]}" alt="Sexta imagen">
                             </div>
                           </div>
                         </div>
                         <div class="carousel-item">
                           <div class="row">
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[12]}" alt="Cuarta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[6]}" alt="Cuarta imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[13]}" alt="Quinta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[7]}" alt="Quinta imagen">
                             </div>
                             <div class="col-md-4">
-                              <img class="d-block w-100 carruelImg" src="${imagenes[14]}" alt="Sexta imagen">
+                              <img class="d-block  carruelImg" src="${imagenes[8]}" alt="Sexta imagen">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[9]}" alt="Cuarta imagen">
+                            </div>
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[10]}" alt="Quinta imagen">
+                            </div>
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[11]}" alt="Sexta imagen">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[12]}" alt="Cuarta imagen">
+                            </div>
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[13]}" alt="Quinta imagen">
+                            </div>
+                            <div class="col-md-4">
+                              <img class="d-block  carruelImg" src="${imagenes[14]}" alt="Sexta imagen">
                             </div>
                           </div>
                         </div>`
 }
-
-  
-{/* <div class="carousel-item active">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen1.jpg" alt="Primera imagen">
-                        </div>
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen2.jpg" alt="Segunda imagen">
-                        </div>
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen3.jpg" alt="Tercera imagen">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen4.jpg" alt="Cuarta imagen">
-                        </div>
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen5.jpg" alt="Quinta imagen">
-                        </div>
-                        <div class="col-md-4">
-                          <img class="d-block w-100" src="imagen6.jpg" alt="Sexta imagen">
-                        </div>
-                      </div>
-                    </div> */}
