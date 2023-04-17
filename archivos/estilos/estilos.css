@@ -15,6 +15,8 @@ body{
 }
 
 nav{
+    font-size: large;
+    height: 10vh;
     display: flex;
     justify-content: center;
 }
@@ -32,11 +34,13 @@ nav{
 }
 
 .car{
+    width: 80vw;
     height: 70vh;
 }
 
 .carruelImg{
     height: 40vh;
+    width: 15vw;
 }
 
 .bor{
@@ -56,15 +60,20 @@ nav{
     height: 80%;
 }
 
-footer{  
-    background-color: #ffa9e9;
-    display: flex; 
-    justify-content: space-around; 
-    align-items: center;
-    height: 8.4vh;
-}
-
 .face{
     width: 2vw;
     height: 4vh;
+}
+
+footer{
+    background-color:  #ffa9e9;
+}
+
+.bgBoton{
+    background-color: #81e6d0 !important;
+}
+
+.bgBtn{
+    background-color: #81e6d079 !important;
+    width: 5% !important;
 }
