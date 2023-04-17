@@ -24,3 +24,7 @@ nav{
 .h1Class{
     font-family: 'Dancing Script', cursive;
 }
+
+.car{
+    height: 70vh;
+}
