@@ -234,22 +234,6 @@ background-color: #005ad898 ;
   height: 80%;
 }
 
-.navColor{
-  background-color: #ffa9e9;
-}
-
-nav{
-  font-size: large;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-}
-
-
-
-.navC{
-  width: 5rem;
-}
 
 .h1Class{
   font-family: 'Dancing Script', cursive;
