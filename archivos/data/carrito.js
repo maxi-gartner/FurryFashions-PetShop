@@ -1,9 +1,10 @@
 const data = JSON.parse(localStorage.getItem('carrito'));
-console.log(data);
 
 buttonsCart(data)
 
-const cart = document.getElementById("cart")
+const $ = id => document.getElementById(id)
+const cart = $("cart")
+
 
 function printArticle(data){
     template = document.getElementById("templateCartItem").content
@@ -36,14 +37,36 @@ function printArticle(data){
     cart.appendChild(fragment)
     fullShipment.textContent = `Total de la compra: ${valuefullShipment}`
 }
-printArticle(data)
+function printCardEmpty(){
+    template = document.getElementById("templateCartEmply").content
+    fullShipment = document.getElementById("fullShipment")
+    allItems = document.getElementById("allItems")
+
+    const fragment = document.createDocumentFragment()
+        const clone = template.cloneNode(true)
+        fragment.appendChild(clone)
+    cart.appendChild(fragment)/* 
+    document.getElementById('buttonDelet').style.display = 'none';
+    document.getElementById('buttomPurchase').style.display = 'none';
+    document.querySelector('.subtrtactAndAdd').style.display = 'none';
+    document.querySelector('.valueStock').style.display = 'none'; */
+
+    const cartNumber = document.getElementById("cartNumber")
+    cartNumber.textContent = `Articulos: 0`
+}
+
+if(data){
+    printArticle(data)
+    PrintcartNumber(data)
+}else{
+    printCardEmpty()
+}
 
 function PrintcartNumber(data){
     const cartNumber = document.getElementById("cartNumber")
     //console.log(cartNumber)
     cartNumber.textContent = `Articulos: ${data.length}`
 }
-PrintcartNumber(data)
 
 function buttonsCart(data){
     const cartConteiner = document.getElementById("cartConteiner")
@@ -56,10 +79,19 @@ function buttonsCart(data){
             console.log("botton de borrar")
             const dataDelet = data.filter(data => data._id !== e.target.id)
             data = dataDelet
-            localStorage.setItem('carrito', JSON.stringify(data));
-            cart.textContent = ''
+            console.log(data.length)
             printArticle(data)
-            PrintcartNumber(data)
+            if(data.length === 0){
+                console.log("data es igual a 0")
+                cart.textContent = ''
+                localStorage.removeItem('carrito');
+                printCardEmpty()
+            }else{
+                localStorage.setItem('carrito', JSON.stringify(data));
+                cart.textContent = ''
+                printArticle(data)
+                PrintcartNumber(data)
+            }
         }
         if(e.target.classList.contains("subtractItem")){
             console.log("botton de restar")
@@ -70,18 +102,19 @@ function buttonsCart(data){
                         item.disponibles++;
                         const dataDelet = data.filter(data => data._id !== e.target.id)
                         data = dataDelet
-                        localStorage.setItem('carrito', JSON.stringify(data));
-                        cart.textContent = ''
+                        console.log(data.length)
                         printArticle(data)
-                        PrintcartNumber(data)
-                    }else{
-                        item.__v--;
-                        item.disponibles++;
-                        console.log(data)
-                        localStorage.setItem('carrito', JSON.stringify(data));
-                        cart.textContent = ''
-                        printArticle(data)
-                        PrintcartNumber(data)
+                        if(data.length === 0){
+                            console.log("data es igual a 0")
+                            cart.textContent = ''
+                            localStorage.removeItem('carrito');
+                            printCardEmpty()
+                        }else{
+                            localStorage.setItem('carrito', JSON.stringify(data));
+                            cart.textContent = ''
+                            printArticle(data)
+                            PrintcartNumber(data)
+                        }
                     }
                 }
             })
@@ -98,14 +131,16 @@ function buttonsCart(data){
                         printArticle(data)
                         PrintcartNumber(data)
                     }else{
-                        alert('no hay mas disponibles');
+                        Swal.fire('No hay mas disponibles😅')
                     }
                 }
             })
             console.log(data)
         }
         if(e.target.classList.contains("purchaseButton")){
-            console.log("boton de comprar")
+            if(!data){
+                Swal.fire('No hay ningun articulo en el carrito🤔')
+            }else{
             Swal.fire({
                 title: '¿Desea continuar con la compra?',
                 icon: 'question',
@@ -115,6 +150,67 @@ function buttonsCart(data){
                 confirmButtonText: 'Si, quiero!'
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        conteinerModal.style.display="flex"
+                    }
+                })
+            }
+        }
+    }
+}
+function completeCreditCard($){
+    const cardNumber = $("card-number")
+    const cardName = $("card-name")
+    const cardMonth = $("card-month")
+    const cardYear = $("card-year")
+    const cardCvc = $("card-cvc")
+    const inputName = $("input-name")
+    const inputNumber = $("input-number")
+    const inputMonth = $("input-month")
+    const inputYear = $("input-year")
+    const inputCvc = $("input-cvc")
+    const buttonCreditCard = $("buttonCreditCard")
+    const conteinerModal = $("conteinerModal")
+    //console.log(inputCvc, inputMonth, inputYear, inputCvc, inputName, inputNumber,)
+    inputName.addEventListener('keyup',() => cardName.textContent = inputName.value)
+    inputNumber.addEventListener('keyup',() => {
+        keyup = inputNumber.value
+        keyupSeparate = [...keyup].reduce((p, c, i) => p += (i && !(i % 4)) ? "  " + c : c, "");;
+        cardNumber.textContent = keyupSeparate
+        if(inputNumber.value.length == 16){
+            inputNumber.disabled = true;
+        }
+        })
+    inputMonth.addEventListener('keyup',() => {
+        cardMonth.textContent = inputMonth.value
+        if(inputMonth.value.length == 2){
+            inputMonth.disabled = true;
+        }
+    })
+    inputYear.addEventListener('keyup',() => {
+        cardYear.textContent = inputYear.value
+        if(inputYear.value.length == 2 ){
+            inputYear.disabled = true;
+        }
+    })
+    inputCvc.addEventListener('keyup',() => {
+        cardCvc.textContent = `CVC: ${inputCvc.value}`
+        if(inputCvc.value.length == 4){
+            inputCvc.disabled = true;
+        }
+    })
+    buttonCreditCard.addEventListener('click',(e) => {
+        e.preventDefault();
+        if(inputCvc.value.length < 3 || inputNumber.value.length < 16 || inputMonth.value.length < 2 || inputYear.value.length < 2){
+            console.log("error de datos")
+            Swal.fire({
+                title: 'Error al ingresar los datos',
+                icon: 'error',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Volver a ingresar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
                     Swal.fire(
                         'Deleted!',
                         'Your file has been deleted.',
@@ -122,6 +218,25 @@ function buttonsCart(data){
                     )
                     }
                 })
+        }else{
+            Swal.fire({
+                title: '¿Confirmar el pago?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Confirmar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                    Swal.fire(
+                        'Pago Exitoso!',
+                        'Gracias por tu compra'
+                    )
+                    location.href ="../../index.html";
+                    localStorage.removeItem('carrito');
+                    }
+                })
         }
-    }
+    })
 }
+completeCreditCard($)

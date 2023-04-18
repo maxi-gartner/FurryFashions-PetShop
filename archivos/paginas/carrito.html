@@ -25,13 +25,13 @@
                         <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./archivos/paginas/farmacia.html">Farmacia</a>
+                        <a class="nav-link" href="./farmacia.html">Farmacia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./archivos/paginas/jugueteria.html">Jugueteria</a>
+                        <a class="nav-link" href="./jugueteria.html">Jugueteria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./archivos/paginas/contacto.html">Contacto</a>
+                        <a class="nav-link" href="./contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item d-inline navC d-flex align-items-center">
                         <a class="nav-link d-inline d-flex aling-items-center navC" href="#"><img class="img1" src="../images/cart.png" alt=""></a>
@@ -54,19 +54,19 @@
             <div class="purchase">
                 <a class="btn btn-primary purchaseButton" id="buttomPurchase" role="button" data-bs-toggle="button">Comprar</a>
         </div>
-        <div class="conteinerModal">
+        <div class="conteinerModal" id="conteinerModal">
             <div class="modalTarjet">
+                        <div class="imgPets"></div>
                         <div class="cardImg">
                             <div class="chip-card"></div>
+                            <div class="logo-card"></div>
                             <div>
                                 <p class="card-number" id="card-number">0000 0000 0000 0000</p>
-                                <div class="card-name-date">
-                                <p class="card-name" id="card-name">Jane Appleseed</p>
+                                <p class="card-name" id="card-name">Apellido y Nombre</p>
                                 <p class="card-date">
-                                    <span id="card-month">00</span>/<span id="card-year">00</span>
+                                    <span id="card-month">Vto: 00</span>/<span id="card-year">00</span>
                                 </p>
-                                <p class="card-cvc" id="card-cvc">000</p>
-                                </div>
+                                <p class="card-cvc" id="card-cvc">CVC: 000</p>
                             </div>
                         </div>
                     <div class="form-wrapper">
@@ -77,21 +77,21 @@
                             </div>
                             <div class="formGroup">
                             <label for="input-number" class="label">Numero de tarjeta</label>
-                            <input type="text" class="input" id="input-number" style="width: 16.3rem;" placeholder="e.g. 1234 5678 9123 0000" required>
+                            <input type="number" class="input" id="input-number" style="width: 16.3rem;" placeholder="e.g. 1234 5678 9123 0000" required>
                             </div>
                             <div class="formGroup">
                                 <label for="input-month" class="label">Vencimiento (MM/YY)</label>
                                 <div class="inputs">
-                                    <input type="text" class="input" style="width: 8rem;" id="input-month" placeholder="mes" maxlength="2" required>
-                                    <input type="text" class="input" style="width: 8rem;" id="input-year" placeholder="año" maxlength="2" required>
+                                    <input type="number" class="input" style="width: 8rem;" id="input-month" placeholder="mes" maxlength="2" required>
+                                    <input type="number" class="input" style="width: 8rem;" id="input-year" placeholder="año" maxlength="2" required>
                                 </div>
                             </div>
                             <div class="conteinerButtonConfirm">
                             <div class="rows">
                                     <label for="input-cvc" class="label">CVC</label>
-                                    <input type="text" class="input" id="input-cvc" style="height: 1.7rem;" placeholder="e.g. 123" maxlength="3" required>
+                                    <input type="number" class="input" id="input-cvc" style="height: 1.7rem;" placeholder="e.g. 123" maxlength="3" required>
                             </div>
-                            <button class="btn btn-primary button" type="submit">Confirm</button>
+                            <button class="btn btn-primary" id="buttonCreditCard" type="submit">Confirm</button>
                             </div>
                         </form>
                     </div>
@@ -105,10 +105,10 @@
             </div>
             <div class="dataItem">
                 <h4 class="nameItem"></h4>
-                <p class="descriptionItem">No hay ningun producto? <br>Agrega productos al carrito</p>
+                <p class="descriptionItem"></p>
                 <p class="price"></p>
                 <div class="buttomsItem">
-                    <a class="btn btn-primary delet" role="button" data-bs-toggle="button">Borrar</a>
+                    <a class="btn btn-primary delet" id="buttonDelet" role="button" data-bs-toggle="button">Borrar</a>
                     <a href="../../index.html" class="btn btn-primary">Mas Productos</a>
                 </div>
             </div>
@@ -124,7 +124,23 @@
             </div>
             </div>
             <div>
-                <p class="allValue" >Total del producto: $2000</p>
+                <p class="allValue" ></p>
+            </div>
+        </div>
+        <div class="separator"></div> 
+    </template>
+    <template id="templateCartEmply">
+        <div class="item">
+            <div class="imgDiv">
+                <img src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png">
+            </div>
+            <div class="dataItem">
+                <h4 class="nameItem"></h4>
+                <p class="descriptionItem">No hay ningun producto? <br>Agrega productos al carrito</p>
+                <p class="price"></p>
+                <div class="buttomsItem">
+                    <a href="../../index.html" class="btn btn-primary">Mas Productos</a>
+                </div>
             </div>
         </div>
         <div class="separator"></div> 

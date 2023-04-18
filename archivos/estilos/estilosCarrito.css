@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&family=Open+Sans&family=Patrick+Hand&family=Playfair+Display:wght@500&display=swap');
+
 body{
     position: relative;
+    min-height: 100vh;
 }
 .main-cart{
     display: flex;
@@ -131,61 +134,104 @@ body{
     background-color: rgba(0, 0, 0, 0.854);
     position: absolute;
     width: 100vw;
-    min-height: 100%;
+    min-height: 100vh;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
     padding-top: 10rem;
+    display: none;
+    font-size: 1.6rem;
 }
 .modalTarjet{
+    position: relative;;
     width: 50rem;
-    height: 40rem;
-    background: url("../images/modal-tarjeta.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: 100%;
+    height: 44rem;
+    background: url("https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d");
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 5rem;
 }
+.imgPets{
+    position: absolute;
+    bottom: -5.1rem;
+    width: 50rem;
+    height: 18rem;
+    background: url(../images/pngwing.com.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+}
 .cardImg{
-    width: 20rem;
-    height: 10rem;
+    width: 30rem;
+    height: 15rem;
     background: url("https://www.wallpapertip.com/wmimgs/6-64960_gold-textured-background-hd-picture-pure-gold-colour.jpg");
     border-radius: 1rem;
     position: relative;
+    font-family: 'Patrick Hand';
+    font-size: 1.8rem;
 }
 .chip-card{
     position: absolute;
-    width: 3rem;
-    height: 2rem;
+    width: 5rem;
+    height: 3rem;
     background: url("https://thumbs.dreamstime.com/b/circuito-el%C3%A9ctrico-ilustraci%C3%B3n-del-vector-del-eps-78480935.jpg");
     background-size: cover;
     border-radius: 10px;
     top: 3rem;
     left: 1rem;
 }
+.logo-card{
+    position: absolute;
+    right: 0;
+    width: 24rem;
+    height: 8rem;
+    background: url("../images/imgbin_credit-card-payment-card-debit-card-e-commerce-payment-system-png.png");
+    background-size: 100%;
+}
+.card-number{
+    position: absolute;
+    bottom: 4rem;
+    left: 1rem;
+}
+.card-date{
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+}
+.card-name{
+    position: absolute;
+    bottom: -0.8rem;
+    left: 1rem;
+}
+.card-cvc{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
 .form input, label, button{
     margin-top: 1rem;
 }
 .conteinerButtonConfirm{
+    position: absolute;
+    width: 40rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 .rows{
     display: flex;
+    align-items: center;
 }
 .formGroup{
     display: flex;
     justify-content: space-between;
-    width: 30rem;
+    width: 40rem;
 }
-.form-wrapper{
-    width: 30rem;
+.rows label{
+    margin-right: 0.5rem;
 }
 
 
