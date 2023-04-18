@@ -12,9 +12,6 @@ fetch(url)
   }
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-
-
-console.log(carrito)
   const seccionjugueteria = document.getElementById(`sectionjugueteria`)
   seccionjugueteria.innerHTML = crearjugueteria
   function crearMasjugueteria(jugueteriaCarta) {
