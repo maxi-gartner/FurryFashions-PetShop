@@ -462,3 +462,14 @@ input[type="checkbox"]:not(:checked) + label:hover::before {
   position: absolute;
   bottom: -10rem;
 }
+@media (min-width: 320px) and (max-width: 1440px){
+
+  .seccionbg
+  {
+
+    flex-direction: column;
+    height: 10rem;
+    width: 100%;
+  }
+
+}
