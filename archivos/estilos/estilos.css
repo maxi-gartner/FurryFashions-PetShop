@@ -20,15 +20,15 @@ body{
 }
 
 nav{
-    font-size: large;
-    height: 10vh;
+    font-size: x-large;
+    /* height: 10vh; */
     display: flex;
     justify-content: center;
 }
 
-.img1{
+/* .img1{
     width: 20%;
-}
+} */
 
 .navC{
     width: 5rem;
@@ -39,8 +39,10 @@ nav{
 }
 
 .car{
-    width: 80vw;
+    padding: 1rem 3rem;
     height: 70vh;
+    object-fit: cover;
+    object-position: left 0 top 30%;
 }
 
 .carruelImg{
@@ -81,4 +83,55 @@ footer{
 .bgBtn{
     background-color: #81e6d079 !important;
     width: 5% !important;
+}
+
+.slider{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+  .slider .slide-track
+  {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: calc(200px * 20 );
+  }
+  .slider .slide
+  {
+    width: 200px;
+  }
+  .slider .slide img
+  {
+    width: 100%;
+    height: 20vh;
+    padding: 1rem;
+   background-color: #fd5daf;
+  }
+  @keyframes scroll 
+  {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  
+    }
+    100%
+    {
+      -webkit-transform: translateX(calc(-200px * 10));
+      transform: translateX(calc(-200px * 10));
+    }
+  }
+
+@media only screen and (min-width: 320px) and (max-width: 767px){
+    .carruelImg{
+        height: 25vh;
+        width: 100%;
+    }
+    .car{
+        height: 30vh;
+    }
+    .h1Class{
+        font-family: 'Dancing Script', cursive;
+        font-size: small;
+    }
 }
