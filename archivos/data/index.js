@@ -1,4 +1,5 @@
 const carrusel = document.getElementById('carrusel')
+const carrusel2 = document.getElementById('carrusel2')
 let evento
 fetch('https://mindhub-xj03.onrender.com/api/petshop')
   .then((response) => response.json())
@@ -6,6 +7,7 @@ fetch('https://mindhub-xj03.onrender.com/api/petshop')
     evento = datos;
     console.log(evento);
     eventosUP(evento)
+    eventos(evento)
   })
   .catch((err) => console.log(err));
 
@@ -65,4 +67,25 @@ function eventosUP(evento) {
                             </div>
                           </div>
                         </div>`
+  console.log(carrusel)                       
 }
+                      
+function eventos(evento) {
+  let imagenes = evento.map(evento => evento.imagen)
+  console.log(imagenes)
+  let template = ''
+  imagenes.forEach(img => {  
+    console.log(img)
+    template += `<div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <img class="d-block  carruelImg" src="${img}" alt="Primera imagen">
+                    </div>                           
+                  </div>
+                </div>`
+  });
+  console.log(template)
+  carrusel2.innerHTML = template
+  console.log(carrusel2)
+}
+                      
