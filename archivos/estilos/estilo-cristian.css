@@ -1,180 +1,227 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body
+{
+background: url(https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d);
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.buttonAnadir
+{
+background-color: #ff9fb3;
 }
 .cartajugueteria
 {
-    border: 2px solid red;
+
+  border-radius: 20px 20px 0px 0px !important;
+  background-color: #e4fff9;
+  
 }
 .card
 {
-    border: 2px solid yellow;
+ 
+
+  box-shadow: rgba(150, 16, 148, 0.25) 0px 54px 55px, rgba(227, 13, 255, 0.12) 0px -12px 30px, rgba(219, 15, 255, 0.12) 0px 4px 6px, rgba(209, 25, 255, 0.17) 0px 12px 13px, rgba(168, 3, 223, 0.09) 0px -3px 5px;
+}
+.cartajugueteria
+{
+max-height: 35vh;
+min-height: 35vh;
+background-color: #005ad898 ;
 }
 .card-body
 {
-    border: 2px solid blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  
+  display: flex;
+  background-color: #005ad898 ;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 0px 0px 20px 20px !important;
 }
 .card-title
 {
-    border: 2px solid red;
+ 
+  font-weight: bold;
+  text-align: center;
 }
 .card-text
 {
-    border: 2px solid grey;
+ 
+  color: white;
 }
 .pjugueteria2
 {
-    border: 2px solid salmon;
+ color: white;
+}
+.pjugueteria1
+{
+ 
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+   font-weight: 600;
+   padding: 5px 8px;
+  
+}
+.carta-jugueteria {
+  transition: transform 0.2s;
+
+  border-radius: 20px !important;
 }
 
-.carta-jugueteria {
-    transition: transform 0.2s;
-  }
-  
-  .carta-farmacia:hover {
-    transform: scale(1.05);
-  }
-  /* Box modal */
+.carta-jugueteria:hover {
+  transform: scale(1.05);
+}
+/* Box modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 10%;
-    border: 2px solid saddlebrown;
-    height: 10%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 10%;
+  border: 2px solid saddlebrown;
+  height: 10%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
   
-  /* Contenido del box modal */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border: 2px solid salmon;
-  }
-  
-  /* Botón de cierre */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    border: 2px solid blue;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+}
 
-  }
-  .modal-small .modal-content {
-    max-width: 30rem;
-    width: 100%;
-    border: 2px solid red;
-    
-  }
-  .buttonAnadir {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 1px solid #4f4f4f;
-    border-radius: 4px;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    font-size: 19px;
-    color: black;
-    z-index: 1;
-   }
-   
-   .buttonAnadir:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-   }
-   
-   .buttonAnadir:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #39bda7;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-   }
-   
-   .buttonAnadir:hover {
-    color: #ffffff;
-    border: 1px solid #39bda7;
-   }
-   
-   .buttonAnadir:hover:before {
-    top: -35%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-   }
-   
-   .buttonAnadir:hover:after {
-    top: -45%;
-    background-color: #39bda7;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-   }
+/* Contenido del box modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 1rem;
+  border: 1px solid #888;
+  width: 80%;
+  
+  border: 2px solid salmon;
+ 
+}
 
-   .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-  }
+/* Botón de cierre */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+ 
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.modal-small .modal-content {
+  max-width: 80rem;
+ display: flex;
+ flex-direction: row;
+
+ border-radius: 20px;
+ background-color: #fd5daf;
+}
+.modalPadre
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 2rem;
   
-  .modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+
+}
+.modalPadre h2
+{
+  font-size: 3rem;
+}
+#modal-descripcion
+{
+  overflow: auto;
+  margin: 10px;
+  max-height: 20rem;
+}
+#modal-imagen
+{
+  width: 30%; 
+  margin: 1rem 5rem;
+  height: 50vh;
+  object-fit: contain;
+ }
+.buttonAnadir {
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  color: black;
+  z-index: 1;
+  font-weight: bold;
+
+ }
+ 
+ .buttonAnadir:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+ 
+ .buttonAnadir:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+ }
+ 
+ .buttonAnadir:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+ }
+ 
+ .buttonAnadir:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+ 
+ .buttonAnadir:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+ }
+ .sectionjugueteriaCartas
+ {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+
+  width: 80%;
+  margin-left: 10rem;
+ }
   
