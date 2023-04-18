@@ -10,6 +10,10 @@ body
   background-size: cover;
   
 }
+main
+{
+ min-height: 150vh;
+}
 .buttonAnadir
 {
   background-color: #ff9fb3;
@@ -403,13 +407,19 @@ input[type="checkbox"]:not(:checked) + label:hover::before {
 }
 .carousel img
 {
-  height: 80vh;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top 30% right 10%;
+}
+.carousel #unim
+{
+  object-fit: cover !important;
+  object-position: bottom 30% right 10% !important;
 }
 .carousel{
 
-  width: 50%;
-  position: absolute;
-  left: 500px;
+  width: 100%;
+ 
 }
 .slider{
   width: 100%;
@@ -432,7 +442,7 @@ input[type="checkbox"]:not(:checked) + label:hover::before {
   width: 100%;
   height: 20vh;
   padding: 1rem;
- background-color: #fd5daf;
+ background-color: #fd5db0;
 }
 @keyframes scroll 
 {
@@ -446,4 +456,9 @@ input[type="checkbox"]:not(:checked) + label:hover::before {
     -webkit-transform: translateX(calc(-200px * 10));
     transform: translateX(calc(-200px * 10));
   }
+}
+#h5sinoencuentra
+{
+  position: absolute;
+  bottom: -10rem;
 }
