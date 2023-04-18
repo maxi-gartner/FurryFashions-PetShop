@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    position: relative;
 }
 .main-cart{
     display: flex;
@@ -11,6 +11,9 @@ body{
     border-radius: 0.5rem;
     color: black;
     margin: 3vw 0vw;
+    border:1px solid #ffa9e9;
+    box-shadow: 0px 0px 22px #ffa9e9;
+    background-color: rgba(255, 255, 255, 0.692);
 }
 .cartNumber{
     width: 8em;
@@ -123,6 +126,70 @@ body{
     font-size: 20px;
     font-weight: bold;
 }
+/* ----------------------------MODAL-------------------------------- */
+.conteinerModal{
+    background-color: rgba(0, 0, 0, 0.854);
+    position: absolute;
+    width: 100vw;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 10rem;
+}
+.modalTarjet{
+    width: 50rem;
+    height: 40rem;
+    background: url("../images/modal-tarjeta.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 5rem;
+}
+.cardImg{
+    width: 20rem;
+    height: 10rem;
+    background: url("https://www.wallpapertip.com/wmimgs/6-64960_gold-textured-background-hd-picture-pure-gold-colour.jpg");
+    border-radius: 1rem;
+    position: relative;
+}
+.chip-card{
+    position: absolute;
+    width: 3rem;
+    height: 2rem;
+    background: url("https://thumbs.dreamstime.com/b/circuito-el%C3%A9ctrico-ilustraci%C3%B3n-del-vector-del-eps-78480935.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    top: 3rem;
+    left: 1rem;
+}
+.form input, label, button{
+    margin-top: 1rem;
+}
+.conteinerButtonConfirm{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.rows{
+    display: flex;
+}
+.formGroup{
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+}
+.form-wrapper{
+    width: 30rem;
+}
+
+
+
 @media screen and (max-width:767px) {
     .item{
         flex-direction: column;
