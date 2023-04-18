@@ -100,21 +100,29 @@ function buttonsCart(data){
                 if(item._id === e.target.id){
                     if(item.__v === 1){
                         item.disponibles++;
+                        item.__v--
                         const dataDelet = data.filter(data => data._id !== e.target.id)
                         data = dataDelet
-                        console.log(data.length)
-                        printArticle(data)
+                        localStorage.setItem('carrito', JSON.stringify(data));
+                        console.log("data es igual a 0")
+                        cart.textContent = ''
                         if(data.length === 0){
                             console.log("data es igual a 0")
                             cart.textContent = ''
                             localStorage.removeItem('carrito');
                             printCardEmpty()
                         }else{
-                            localStorage.setItem('carrito', JSON.stringify(data));
                             cart.textContent = ''
                             printArticle(data)
                             PrintcartNumber(data)
-                        }
+                    }
+                    }else{
+                        item.disponibles++;
+                        item.__v--
+                        localStorage.setItem('carrito', JSON.stringify(data));
+                        cart.textContent = ''
+                        printArticle(data)
+                        PrintcartNumber(data)
                     }
                 }
             })
@@ -154,6 +162,10 @@ function buttonsCart(data){
                     }
                 })
             }
+        }if(e.target.classList.contains("buttonExit")){
+            console.log("boton exit")
+            const conteinerModal = $("conteinerModal")
+            conteinerModal.style.removeProperty("display");
         }
     }
 }
@@ -169,7 +181,6 @@ function completeCreditCard($){
     const inputYear = $("input-year")
     const inputCvc = $("input-cvc")
     const buttonCreditCard = $("buttonCreditCard")
-    const conteinerModal = $("conteinerModal")
     //console.log(inputCvc, inputMonth, inputYear, inputCvc, inputName, inputNumber,)
     inputName.addEventListener('keyup',() => cardName.textContent = inputName.value)
     inputNumber.addEventListener('keyup',() => {
@@ -209,14 +220,6 @@ function completeCreditCard($){
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Volver a ingresar'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                    }
                 })
         }else{
             Swal.fire({
@@ -232,8 +235,10 @@ function completeCreditCard($){
                         'Pago Exitoso!',
                         'Gracias por tu compra'
                     )
-                    location.href ="../../index.html";
-                    localStorage.removeItem('carrito');
+                    setTimeout(function(){
+                        location.href ="../../index.html";
+                        localStorage.removeItem('carrito');
+                    }, 1000);
                     }
                 })
         }

@@ -134,7 +134,7 @@ body{
     background-color: rgba(0, 0, 0, 0.854);
     position: absolute;
     width: 100vw;
-    min-height: 100vh;
+    min-height: 100%;
     top: 0;
     left: 0;
     display: flex;
@@ -143,8 +143,15 @@ body{
     display: none;
     font-size: 1.6rem;
 }
+.modalTarjet svg{
+    color: red;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
 .modalTarjet{
-    position: relative;;
+    position: relative;
     width: 50rem;
     height: 44rem;
     background: url("https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d");
