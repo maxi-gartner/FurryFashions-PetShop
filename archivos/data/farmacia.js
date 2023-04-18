@@ -155,7 +155,7 @@ barraDeBusquedaValor.addEventListener('input', () => {
   
   // Si no se encontraron resultados, se crea un elemento h5
   if (cartasFarmaciaFiltradas.length === 0) {
-    seccionFarmacia.innerHTML = '<h5>No se encontraron resultados</h5>';
+    seccionFarmacia.innerHTML = `<h5 id="h5sinoencuentra">No se encontraron resultados para "${busquedaValor}" <br>prueba buscando otro producto🐾 </h5>`;
   } else {
     seccionFarmacia.innerHTML = '';
     for (let i = 0; i <  cartasFarmaciaFiltradas.length; i++) {
