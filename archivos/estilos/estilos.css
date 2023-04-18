@@ -95,7 +95,7 @@ footer{
   {
     display: flex;
     animation: scroll 40s linear infinite;
-    width: calc(200px * 20 );
+    width: calc(200px * 15 );
   }
   .slider .slide
   {
@@ -117,8 +117,8 @@ footer{
     }
     100%
     {
-      -webkit-transform: translateX(calc(-200px * 10));
-      transform: translateX(calc(-200px * 10));
+      -webkit-transform: translateX(calc(-158px * 7));
+      transform: translateX(calc(-158px * 7));
     }
   }
 
