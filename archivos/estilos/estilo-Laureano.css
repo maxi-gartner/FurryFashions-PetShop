@@ -19,6 +19,9 @@ body{
     border: 2px solid black;
     border-radius: 10px;
 }
+#row{
+    margin: 0 !important;
+}
 
 .contenedor_imagen{
     display: flex;
@@ -33,7 +36,9 @@ form{
     border-radius: 10px;
     text-align: center;
     padding: 10px;
+    margin-bottom: 20px;
 }
+
 form:hover{
     padding: 20px;
     transition: 0.5s;
@@ -43,8 +48,8 @@ p{
     font-style: italic;
 }
 input , option, textarea{
-    width: 10rem;
-    border-radius: 10px;
+    width: 10rem !important;
+    border-radius: 10px !important;
 }
 #btn{
     font-style: italic;
@@ -53,9 +58,6 @@ input , option, textarea{
 #gato_guante{
     width: 200px;
 }
-/* #gato_guante:hover{
-    transform: rotate(170deg);
-} */
 #contenedor_main{
     padding-top: 2rem;
 }
@@ -80,13 +82,63 @@ textarea{
 }
 footer{  
     background-color: #ffa9e9;
-    display: flex; 
-    justify-content: space-around; 
-    align-items: center;
-    height: 8.4vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.seccion_footer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.seccion_footer a{
+    text-decoration: none;
+}
+.seccion_footer a:hover{
+    color: #eefffb !important;
+}
+
+.img1{
+    width: 20px;
+}
+#opciones{
+    margin-top: 5px;
 }
 .face{
     width: 2vw;
     height: 4vh;
 }
+@media only screen and (min-width:320px) and (max-width:767px){
+    .mision_vision p{
+       width: 15rem;
+    }
+    form p{
+        width: 100px;
+        margin: 0;
+    }
+    .fotos{
+        width: 15rem;
+        height: 15rem;
+    }
+    .mision_vision:hover{
+        padding: none;
+        transition:none;
+    }
+    form{
+        box-shadow: none;
+        width: 15rem;
+    }
+    form:hover{
+        padding: none;
+        transition:none;
+    } 
+    footer{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    
+
 
