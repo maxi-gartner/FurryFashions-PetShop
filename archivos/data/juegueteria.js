@@ -212,6 +212,37 @@ barraDeBusquedaValor.addEventListener('input', () => {
     });
     
 })
+// Función para filtrar los resultados
+function filtrarResultados() {
+  const busquedaValor = barraDeBusquedaValor.value.toLowerCase();
+  const cartasjugueteria = document.querySelectorAll('.carta-jugueteria');
+  
+  cartasjugueteria.forEach(carta => {
+    
+    const unidades = parseInt(carta.querySelector('.pjugueteria2').textContent.split(' ')[1]);
+    const nombreProducto = carta.querySelector('.card-title').textContent.toLowerCase();
+    
+    if (disponiblesCheckbox.checked && (unidades < 1 || !nombreProducto.includes(busquedaValor))) {
+      carta.style.display = 'none';
+    } else if (!disponiblesCheckbox.checked && !nombreProducto.includes(busquedaValor)) {
+      carta.style.display = 'none';
+    } else {
+      carta.style.display = 'block';
+    }
+  });
+}
+barraDeBusquedaValor.addEventListener('input', () => {
+  filtrarResultados();
+});
 
+// Event listener para el checkbox
+disponiblesCheckbox.addEventListener('change', () => {
+  filtrarResultados();
+});
 })
+.catch(error => console.log(error))
+
+
+
+
 .catch(error => console.log(error));
