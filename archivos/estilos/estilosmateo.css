@@ -23,7 +23,7 @@ body
   }
   .card
   {
-   
+    
 
     box-shadow: rgba(150, 16, 148, 0.25) 0px 54px 55px, rgba(227, 13, 255, 0.12) 0px -12px 30px, rgba(219, 15, 255, 0.12) 0px 4px 6px, rgba(209, 25, 255, 0.17) 0px 12px 13px, rgba(168, 3, 223, 0.09) 0px -3px 5px;
 }
@@ -40,12 +40,17 @@ body
     flex-direction: column;
     justify-content: space-around;
     border-radius: 0px 0px 20px 20px !important;
+    min-height: 29vh;
+    max-height: 40vh;
 }
 .card-title
 {
    
     font-weight: bold;
     text-align: center;
+
+    max-height: 10rem;
+    min-height: 3rem;
 }
 .card-text
 {
@@ -86,7 +91,7 @@ body
     left: 0;
     top: 0;
     width: 10%;
-    border: 2px solid saddlebrown;
+
     height: 10%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
@@ -220,11 +225,10 @@ body
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem;
+    gap: 10rem;
     padding: 2rem;
   
-    width: 80%;
-    margin-left: 10rem;
+   
    }
  /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
@@ -307,4 +311,139 @@ input:not(:placeholder-shown) ~ .reset {
 .form svg {
   width: 17px;
   margin-top: 3px;
+}
+/* .seccion-inputsycards
+{
+ 
+  display: flex;
+flex-direction: column;
+  width: 80% ;
+  margin-left: 100px;
+  align-items: center;
+  border: 2px solid red;
+} */
+
+.section-inputs
+{
+  
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  
+}
+.seccionbg
+{
+  background-color: #ffa9ea13;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 5vh;
+}
+.input-group
+{
+  width: auto !important;
+}
+/* Estilos generales para el label */
+label {
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Estilos para ocultar el checkbox original */
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estilos para el icono de la casilla de verificación */
+label::before {
+  content: "";
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  border: 2px solid #aaa;
+  border-radius: 0.2rem;
+  vertical-align: middle;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilos para el símbolo de check */
+label::after {
+  content: "\2713";
+  display: inline-block;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.1rem;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilos para cuando el checkbox está marcado */
+input[type="checkbox"]:checked + label::before {
+  background-color: #61c9a8;
+  border-color: #61c9a8;
+}
+
+input[type="checkbox"]:checked + label::before::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Estilos para la animación del icono */
+input[type="checkbox"]:not(:checked) + label:hover::before {
+  transform: scale(1.1);
+}
+.carousel img
+{
+  height: 80vh;
+}
+.carousel{
+
+  width: 50%;
+  position: absolute;
+  left: 500px;
+}
+.slider{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+.slider .slide-track
+{
+  display: flex;
+  animation: scroll 40s linear infinite;
+  width: calc(200px * 20 );
+}
+.slider .slide
+{
+  width: 200px;
+}
+.slider .slide img
+{
+  width: 100%;
+  height: 20vh;
+  padding: 1rem;
+ background-color: #fd5daf;
+}
+@keyframes scroll 
+{
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+
+  }
+  100%
+  {
+    -webkit-transform: translateX(calc(-200px * 10));
+    transform: translateX(calc(-200px * 10));
+  }
 }
