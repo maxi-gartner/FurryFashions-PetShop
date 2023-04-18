@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   
+    background-image: url(https://img.freepik.com/vector-gratis/fondo-acuarela-rosa-pintado-mano-detallado_1048-17039.jpg?w=1380&t=st=1681747474~exp=1681748074~hmac=7294d075552d6223f5e2f574404e8dfd914ff61065add45b35bfab87c6b73f1d);
+}
+.navColor{
+    background-color: #ffa9e9;
+}
+.main_contact{
+    min-height: 100vh;
+}
+.fotos{
+    height: 25rem;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.contenedor_imagen{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px #000000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+form:hover{
+    padding: 20px;
+    transition: 0.5s;
+} 
+p{
+    width: 30rem;
+    font-style: italic;
+}
+input , option, textarea{
+    width: 10rem;
+    border-radius: 10px;
+}
+#btn{
+    font-style: italic;
+    margin-top: 5px;
+}
+#gato_guante{
+    width: 200px;
+}
+/* #gato_guante:hover{
+    transform: rotate(170deg);
+} */
+#contenedor_main{
+    padding-top: 2rem;
+}
+.mision_vision{
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #eefffb;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.mision_vision:hover{
+    padding: 20px;
+    transition: 0.5s;
+}
+textarea{
+    margin-top: 5px !important;
+    resize: none !important;
+}
+
+#sonrie{
+    width: 20px;
+}
+footer{  
+    background-color: #ffa9e9;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+    height: 8.4vh;
+}
+.face{
+    width: 2vw;
+    height: 4vh;
+}
+
