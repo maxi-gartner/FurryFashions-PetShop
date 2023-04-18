@@ -10,54 +10,69 @@ body
   background-size: cover;
   
 }
+.buttonAnadir
+{
+  background-color: #ff9fb3;
+}
 .cartaFarmacia
 {
-    border: 2px solid red;
-}
-.card
-{
-    border: 2px solid yellow;
+  
+    border-radius: 20px 20px 0px 0px !important;
+    background-color: #e4fff9;
+    
+  }
+  .card
+  {
    
+
     box-shadow: rgba(150, 16, 148, 0.25) 0px 54px 55px, rgba(227, 13, 255, 0.12) 0px -12px 30px, rgba(219, 15, 255, 0.12) 0px 4px 6px, rgba(209, 25, 255, 0.17) 0px 12px 13px, rgba(168, 3, 223, 0.09) 0px -3px 5px;
 }
 .cartaFarmacia
 {
   min-height: 35vh;
-
+  background-color: #005ad898 ;
 }
 .card-body
 {
-    border: 2px solid blue;
-    display: flex;
     
+    display: flex;
+    background-color: #005ad898 ;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 0px 0px 20px 20px !important;
 }
 .card-title
 {
-    border: 2px solid red;
+   
     font-weight: bold;
     text-align: center;
 }
 .card-text
 {
-    border: 2px solid grey;
-    color: #ffa9e9;
+   
+    color: white;
 }
 .pfarmacia2
 {
-    border: 2px solid salmon;
+   color: white;
 }
 .pfarmacia1
 {
-    border: 2px solid salmon;
+   
     border-radius: 20px;
     text-align: center;
     color: white;
-    font-weight: bold;
+     font-weight: 600;
+     padding: 5px 8px;
+     position: absolute;
+     top: 20px;
+     transform: rotate(350deg);
+    
 }
 .carta-farmacia {
     transition: transform 0.2s;
+
+    border-radius: 20px !important;
   }
   
   .carta-farmacia:hover {
@@ -82,7 +97,7 @@ body
   .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid #888;
     width: 80%;
     
@@ -96,7 +111,7 @@ body
     float: right;
     font-size: 28px;
     font-weight: bold;
-    border: 2px solid blue;
+   
   }
   
   .close:hover,
@@ -107,23 +122,51 @@ body
 
   }
   .modal-small .modal-content {
-    max-width: 100rem;
-    display: flex;
-    flex-direction: row;
-    border: 2px solid red;
- 
+    max-width: 80rem;
+   display: flex;
+   flex-direction: row;
+  
+   border-radius: 20px;
+   background-color: #fd5daf;
   }
+  .modalPadre
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2rem;
+    
+
+  }
+  .modalPadre h2
+  {
+    font-size: 3rem;
+  }
+  #modal-descripcion
+  {
+    overflow: auto;
+    margin: 10px;
+    max-height: 20rem;
+  }
+  #modal-imagen
+  {
+    width: 30%; 
+    margin: 1rem 5rem;
+    height: 50vh;
+    object-fit: contain;
+   }
   .buttonAnadir {
     display: inline-block;
-    padding: 12px 24px;
-    border: 1px solid #4f4f4f;
-    border-radius: 4px;
+    padding: 10px 10px;
+    border-radius: 20px;
     transition: all 0.2s ease-in;
     position: relative;
     overflow: hidden;
     font-size: 19px;
     color: black;
     z-index: 1;
+    font-weight: bold;
+  
    }
    
    .buttonAnadir:before {
@@ -178,7 +221,90 @@ body
     flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
-    border: 2px solid yellowgreen;
+    padding: 2rem;
+  
     width: 80%;
     margin-left: 10rem;
    }
+ /* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+/* styling of whole input container */
+.form {
+  --timing: 0.3s;
+  --width-of-input: 200px;
+  --height-of-input: 40px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg,#fff);
+}
+/* styling of Input */
+.input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+/* close button shown when typing */
+input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}

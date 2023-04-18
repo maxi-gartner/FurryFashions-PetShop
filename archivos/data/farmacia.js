@@ -46,9 +46,9 @@ console.log(carrito)
   }
   
     return `
-      <div class="card carta-farmacia"" style="width: 18rem;">
-        <img src="${farmaciaCarta.imagen}" class="cartaFarmacia card-img-top p-2" alt="img">
-        <div class="card-body">
+      <div class="card carta-farmacia" style="width: 18rem;">
+        <img src="${farmaciaCarta.imagen}" class="cartaFarmacia  card-img-top p-1" alt="img">
+        <div class="card-body ">
           <p class="pfarmacia1 ${unidadesTextoClass} ">${unidadesTexto}</p>
           <h5 class="card-title">${farmaciaCarta.producto}</h5>
           <h6 class="card-text">Precio: $${farmaciaCarta.precio}</h6>
@@ -58,6 +58,7 @@ console.log(carrito)
       </div>
     `;
   }
+  
   const cartasFarmacia = document.querySelectorAll('.carta-farmacia');
   cartasFarmacia.forEach(carta => {
     const botonAnadir = carta.querySelector('.buttonAnadir');
@@ -129,7 +130,7 @@ function actualizarUnidades(item) {
         unidadesTexto.textContent = 'última unidad disponible';
         unidadesTexto.classList.remove('bg-success');
         unidadesTexto.classList.add('bg-danger');
-      } else if (item.disponibles <= 3) {
+      } else if (item.disponibles < 5) {
         unidadesTexto.textContent = `últimas unidades`;
         unidadesTexto.classList.remove('bg-success');
         unidadesTexto.classList.add('bg-danger');
@@ -215,6 +216,36 @@ barraDeBusquedaValor.addEventListener('input', () => {
     
 })
 
+
+const disponiblesCheckbox = document.querySelector('#disponiblesCheckbox');
+
+// Función para filtrar los resultados
+function filtrarResultados() {
+  const busquedaValor = barraDeBusquedaValor.value.toLowerCase();
+  const cartasFarmacia = document.querySelectorAll('.carta-farmacia');
+  
+  cartasFarmacia.forEach(carta => {
+    
+    const unidades = parseInt(carta.querySelector('.pfarmacia2').textContent.split(' ')[1]);
+    const nombreProducto = carta.querySelector('.card-title').textContent.toLowerCase();
+    
+    if (disponiblesCheckbox.checked && (unidades < 1 || !nombreProducto.includes(busquedaValor))) {
+      carta.style.display = 'none';
+    } else if (!disponiblesCheckbox.checked && !nombreProducto.includes(busquedaValor)) {
+      carta.style.display = 'none';
+    } else {
+      carta.style.display = 'block';
+    }
+  });
+}
+barraDeBusquedaValor.addEventListener('input', () => {
+  filtrarResultados();
+});
+
+// Event listener para el checkbox
+disponiblesCheckbox.addEventListener('change', () => {
+  filtrarResultados();
+});
 })
 .catch(error => console.log(error));
 
