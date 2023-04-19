@@ -37,6 +37,8 @@ body{
 }
 .item img{
     width: 11rem;
+    height: 13rem;
+    object-fit: cover;
 }
 .item{
     display: flex;
@@ -114,8 +116,13 @@ body{
     padding: 5%;
     padding-bottom: 0;
 }
-.buttomsItem a{
+.buttomsItem{
     margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2rem;
+    width: 15rem;
 }
 .price{
     margin: 5px;
@@ -266,5 +273,10 @@ body{
         display: block;
         text-align: end;
         padding-right: 1rem;
+    }
+}
+@media screen and (max-width:375px) {
+    .item{
+        height: auto;
     }
 }
