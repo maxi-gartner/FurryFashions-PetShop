@@ -140,4 +140,7 @@ footer{
     .car{
         height: 30vh;
     }
+    .conteiner-nav{
+        flex-direction: column;
+    }
 }
