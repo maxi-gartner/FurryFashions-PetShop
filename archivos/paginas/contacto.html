@@ -11,44 +11,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/archivos/estilos/estilos.css">
     <title>Contacto</title>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark navColor static-top">
-        <div class="container">
-            <a class="navbar-brand" href="#" id="logo">
-                <img src="../images/logo.PNG" alt="Logo de la pet shop" height="70">
-                <h1 class="display-3 d-flex justify-content-center align-items-center mt-1 h1Class">Furry Fashions</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <div class="conteiner-nav">
+        <a class="navbar-brand d-flex" href="../../index.html">
+          <img src="../images/logo.PNG" alt="Logo de la pet shop" height="80" class="imgLogo">
+          <h1 class="display-3 d-flex justify-content-center align-items-center mt-1 h1Class">Furry Fashions</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto ">
-                <li class="nav-item">
-                    <a class="nav-link active text-black" aria-current="page" href="/index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="../paginas/farmacia.html">Farmacia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="../paginas/jugueteria.html">Juguetería</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Contacto</a>
-                </li>
-                <li class="nav-item d-inline navC d-flex align-items-center">
-                    <a class="nav-link d-inline d-flex aling-items-center navC" href="../paginas/carrito.html"><img class="img1" src="../images/cart.png" alt=""></a>
-                </li>
-            </ul>
+          <ul class="navbar-nav ms-auto ">
+            <li class="nav-item">
+              <a class="nav-link active text-black" aria-current="page" href="../../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="#">Farmacia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="./jugueteria.html">Juguetería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black" href="./contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item d-inline navC d-flex align-items-center">
+              <a class="nav-link d-inline d-flex aling-items-center navC" href="./carrito.html"><img class="img1" src="../images/cart.png" alt="carrito de compra" height="25"></a>
+            </li>
+          </ul>
         </div>
-        </div>
+      </div>
     </nav> 
-    <div class="">    
-        <h1 class="display-3 d-flex justify-content-center align-items-center mt-1 h1Class">Contacto</h1>
-    </div>
-</header>
+  </header>
     <main class="main_contact">
         <div class="contenedor_imagen">
             <img class="fotos" src="../Imagenes-contactenos/gato-lindo-mascara-medica-ilustracion-icono-vector-dibujos-animados-desinfectante-manos-animales-sanos_138676-6559.avif">
@@ -70,7 +68,7 @@
                   <option>Conejo</option>
                   <option >Ave</option>
                   <option >Otro</option>
-                  <textarea name="Mensaje" id="opciones" cols="20" rows="5" placeholder="Mensaje" ></textarea>
+                  <textarea name="Mensaje" id="texto" cols="20" rows="5" placeholder="Mensaje" ></textarea>
                 </select>
                 <input id="btn" type="submit" value="Enviar">
           </form>
