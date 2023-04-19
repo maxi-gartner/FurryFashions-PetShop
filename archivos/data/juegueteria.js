@@ -3,9 +3,9 @@ fetch(url)
 .then(response => response.json())
 .then(data => {
      const jugueteriaPetShop = data.filter(objeto => objeto.categoria === "jugueteria");
-  console.log(jugueteriaPetShop);
+  //console.log(jugueteriaPetShop);
    const jugueteriaCarta = jugueteriaPetShop[0]
-   console.log(jugueteriaCarta)
+   //console.log(jugueteriaCarta)
    let crearjugueteria = ``
    for (let i = 0; i < 8; i++) {
     crearjugueteria += crearMasjugueteria(jugueteriaPetShop[i]);

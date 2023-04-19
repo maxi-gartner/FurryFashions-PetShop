@@ -1,13 +1,13 @@
-console.log("hola")
+//console.log("hola")
 
 const url = 'https://mindhub-xj03.onrender.com/api/petshop';
 fetch(url)
 .then(response => response.json())
 .then(data => {
      const farmaciaPetShop = data.filter(objeto => objeto.categoria === "farmacia");
-  console.log(farmaciaPetShop);
+  //console.log(farmaciaPetShop);
    const farmaciaCarta = farmaciaPetShop[0]
-   console.log(farmaciaCarta)
+   //console.log(farmaciaCarta)
    let crearFarmacia = ``
    for (let i = 0; i < 7; i++) {
     crearFarmacia += crearMasFarmacia(farmaciaPetShop[i]);
@@ -16,7 +16,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
 
-console.log(carrito)
+//console.log(carrito)
   const seccionFarmacia = document.getElementById(`sectionFarmacia`)
   seccionFarmacia.innerHTML = crearFarmacia
   function crearMasFarmacia(farmaciaCarta) {

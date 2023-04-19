@@ -15,9 +15,9 @@ function printArticle(data){
 
     data.forEach(item => {
     let allValue = item.__v * item.precio
-    console.log(allValue)
-    console.log(item.__v)
-    console.log(item.precio)
+    //console.log(allValue)
+    //console.log(item.__v)
+    //console.log(item.precio)
         template.querySelector(".nameItem").textContent = item.producto
         template.querySelector("img").src = item.imagen
         template.querySelector(".descriptionItem").textContent = ''
@@ -26,7 +26,7 @@ function printArticle(data){
         template.querySelector('.addItem').setAttribute("id", item._id);
         template.querySelector('.subtractItem').setAttribute("id", item._id);
         template.querySelector('.delet').setAttribute("id", item._id);
-        template.querySelector('.allValue').textContent = `Total del articulo: $${allValue}`
+        template.querySelector('.allValue').textContent = `Total del artículo: $${allValue}`
         template.querySelector('.quantity').textContent = `${item.__v} Unidades`
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
@@ -48,7 +48,7 @@ function printCardEmpty(){
     cart.appendChild(fragment)
 
     const cartNumber = document.getElementById("cartNumber")
-    cartNumber.textContent = `Articulos: 0`
+    cartNumber.textContent = `Artículos: 0`
 }
 
 if(data){
@@ -61,7 +61,7 @@ if(data){
 function PrintcartNumber(data){
     const cartNumber = document.getElementById("cartNumber")
     //console.log(cartNumber)
-    cartNumber.textContent = `Articulos: ${data.length}`
+    cartNumber.textContent = `Artículos: ${data.length}`
 }
 
 function buttonsCart(data){
@@ -72,10 +72,10 @@ function buttonsCart(data){
 
     const btAction = (e) => {
         if(e.target.classList.contains("delet")){
-            console.log("botton de borrar")
+            //console.log("botton de borrar")
             const dataDelet = data.filter(data => data._id !== e.target.id)
             data = dataDelet
-            console.log(data.length)
+            //console.log(data.length)
             printArticle(data)
             if(data.length === 0){
                 console.log("data es igual a 0")
@@ -90,9 +90,9 @@ function buttonsCart(data){
             }
         }
         if(e.target.classList.contains("subtractItem")){
-            console.log("botton de restar")
+            //console.log("botton de restar")
             data.map(function(item){
-                console.log(item._id)
+                //console.log(item._id)
                 if(item._id === e.target.id){
                     if(item.__v === 1){
                         item.disponibles++;
@@ -124,7 +124,7 @@ function buttonsCart(data){
             })
         }
         if(e.target.classList.contains("addItem")){
-            console.log("botton de agregar")
+            //console.log("botton de agregar")
             data.map(function(item){
                 if(item._id === e.target.id){
                     if(item.disponibles > 0){
@@ -139,7 +139,7 @@ function buttonsCart(data){
                     }
                 }
             })
-            console.log(data)
+            //console.log(data)
         }
         if(e.target.classList.contains("purchaseButton")){
             if(!data){
@@ -168,15 +168,15 @@ function buttonsCart(data){
         if(e.target.classList.contains("buttonMoreProducts")){
             console.log("boton mas pruductos")
             Swal.fire({
-                title: '¿Hacia que pagina quieres ir a comprar?',
-                text: "Eligue una y seras redirigido",
+                title: 'Seguir comprando en Juguetería o Farmacia?',
+                text: "Eligue una y serás redirigido",
                 imageUrl: 'https://estag.fimagenes.com/img/3/6/r/Z/6rZ_900.jpg',
                 imageWidth: 400,
                 imageHeight: 250,
                 imageAlt: 'Custom image',
                 showCancelButton: true,
-                confirmButtonColor: '#0d6dfd',
-                cancelButtonColor: '#0d6dfd',
+                confirmButtonColor: '#ffa9e9',
+                cancelButtonColor: '#ffa9e9',
                 cancelButtonText: 'Jugueteria',
                 confirmButtonText: 'Farmacia'
                 }).then((result) => {
