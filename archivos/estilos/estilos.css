@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none !important;
+}
+img{
+    object-fit: cover;
 }
 
 body{
@@ -21,9 +25,12 @@ body{
 
 nav{
     font-size: x-large;
-    /* height: 10vh; */
+}
+.conteiner-nav{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
 }
 
 /* .img1{
@@ -34,8 +41,11 @@ nav{
     width: 5rem;
 }
 
-.h1Class{
+h1{
     font-family: 'Dancing Script', cursive;
+}
+.navbar-expand-lg{
+    padding: 0 1rem;
 }
 
 .car{
@@ -129,9 +139,5 @@ footer{
     }
     .car{
         height: 30vh;
-    }
-    .h1Class{
-        font-family: 'Dancing Script', cursive;
-        font-size: small;
     }
 }

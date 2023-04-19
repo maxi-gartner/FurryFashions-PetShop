@@ -233,7 +233,7 @@ background-color: #005ad898 ;
 }
 
 
-.h1Class{
+h1{
   font-family: 'Dancing Script', cursive;
 }
 input[type="checkbox"]:not(:checked) + label:hover::before {
@@ -260,7 +260,7 @@ input[type="checkbox"]:not(:checked) + label:hover::before {
 .slider .slide img
 {
   width: 100%;
-  height: 20vh;
+  height: 100% !important;
   padding: 1rem;
  background-color: #fd5daf;
 }
@@ -286,7 +286,6 @@ footer{
   
 }
 .carousel-inner{
-  margin-top: 2em;
   width: 100vw ;
   height: 30vw;
   
@@ -416,16 +415,35 @@ flex-direction: column;
 .seccionbg
 {
   background-color: #ffa9ea13;
-  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 10vh;
+  width: 100vw;
 }
-.input-group
-{
-  width: auto !important;
+.filters{
+  display: flex;
+  align-items: center;
+}
+.conteinerCheckbox{
+  width: 25rem;
+}
+@media (min-width: 320px) and (max-width: 767px){
+  .filters{
+    flex-direction: column;
+    align-items: center;
+  }
+  .filters .form{
+    margin-bottom: 1rem;
+  }
+  .input-group{
+    display: flex;
+    justify-content: center;
+  }
+  .conteinerCheckbox{
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 /* Estilos generales para el label */
 label {
