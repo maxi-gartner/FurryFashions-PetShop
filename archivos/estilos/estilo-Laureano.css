@@ -41,24 +41,29 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 0px 10px #000000;
     border-radius: 10px;
     text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    width: 22rem;
+    height: 23rem;
 }
-
-form:hover{
-    padding: 20px;
+#btn:hover{
+    padding: 3px;
     transition: 0.5s;
-} 
-p{
-    width: 30rem;
-    font-style: italic;
 }
-input , option, textarea{
+input , option{
+    width: 25rem !important;
+    border-radius: 10px !important;
+    
+}
+textarea{
     width: 20rem !important;
     border-radius: 10px !important;
+}
+.mision_vision p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: larger;
 }
 #btn{
     font-style: italic;
@@ -75,11 +80,8 @@ input , option, textarea{
     border-radius: 10px;
     background-color: #eefffb;
     padding: 10px;
+    width: 40rem;
     margin-bottom: 20px;
-}
-.mision_vision:hover{
-    padding: 20px;
-    transition: 0.5s;
 }
 textarea{
     margin-top: 5px !important;
@@ -119,9 +121,10 @@ footer{
     height: 4vh;
 }
 @media only screen and (min-width:320px) and (max-width:767px){
-    .mision_vision p{
-       width: 15rem;
+    .mision_vision{
+       width: 16rem;
     }
+    
     form p{
         width: 100px;
         margin: 0;
@@ -130,24 +133,14 @@ footer{
         width: 15rem;
         height: 15rem;
     }
-    .mision_vision:hover{
-        padding: none;
-        transition:none;
-    }
-    input{
-        height: 3rem;
-    }
     form{
         box-shadow: none;
         width: 15rem;
     }
     input{
+        height: 3rem;
         width: 15rem !important;
     }
-    form:hover{
-        padding: none;
-        transition:none;
-    } 
     footer{
         flex-direction: column;
         align-items: center;
