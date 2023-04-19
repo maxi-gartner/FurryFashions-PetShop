@@ -26,7 +26,7 @@ function printArticle(data){
         template.querySelector('.addItem').setAttribute("id", item._id);
         template.querySelector('.subtractItem').setAttribute("id", item._id);
         template.querySelector('.delet').setAttribute("id", item._id);
-        template.querySelector('.allValue').textContent = allValue
+        template.querySelector('.allValue').textContent = `Total del articulo: $${allValue}`
         template.querySelector('.quantity').textContent = `${item.__v} Unidades`
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
@@ -35,7 +35,7 @@ function printArticle(data){
         //console.log(valuefullShipment)
     })
     cart.appendChild(fragment)
-    fullShipment.textContent = `Total de la compra: ${valuefullShipment}`
+    fullShipment.textContent = `Total de la compra: $${valuefullShipment}`
 }
 function printCardEmpty(){
     template = document.getElementById("templateCartEmply").content
@@ -45,11 +45,7 @@ function printCardEmpty(){
     const fragment = document.createDocumentFragment()
         const clone = template.cloneNode(true)
         fragment.appendChild(clone)
-    cart.appendChild(fragment)/* 
-    document.getElementById('buttonDelet').style.display = 'none';
-    document.getElementById('buttomPurchase').style.display = 'none';
-    document.querySelector('.subtrtactAndAdd').style.display = 'none';
-    document.querySelector('.valueStock').style.display = 'none'; */
+    cart.appendChild(fragment)
 
     const cartNumber = document.getElementById("cartNumber")
     cartNumber.textContent = `Articulos: 0`
@@ -155,6 +151,7 @@ function buttonsCart(data){
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
+                cancelButtonText: 'Cancelar',
                 confirmButtonText: 'Si, quiero!'
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -162,10 +159,35 @@ function buttonsCart(data){
                     }
                 })
             }
-        }if(e.target.classList.contains("buttonExit")){
+        }
+        if(e.target.classList.contains("buttonExit")){
             console.log("boton exit")
             const conteinerModal = $("conteinerModal")
             conteinerModal.style.removeProperty("display");
+        }
+        if(e.target.classList.contains("buttonMoreProducts")){
+            console.log("boton mas pruductos")
+            Swal.fire({
+                title: '¿Hacia que pagina quieres ir a comprar?',
+                text: "Eligue una y seras redirigido",
+                imageUrl: 'https://estag.fimagenes.com/img/3/6/r/Z/6rZ_900.jpg',
+                imageWidth: 400,
+                imageHeight: 250,
+                imageAlt: 'Custom image',
+                showCancelButton: true,
+                confirmButtonColor: '#0d6dfd',
+                cancelButtonColor: '#0d6dfd',
+                cancelButtonText: 'Jugueteria',
+                confirmButtonText: 'Farmacia'
+                }).then((result) => {
+                    if (result.isConfirmed){
+                        console.log("farmacia apretado")
+                        location.href ="./farmacia.html";
+                    }else{
+                        console.log("jugueteria apretado")
+                        location.href ="./jugueteria.html";
+                    }
+                })
         }
     }
 }
@@ -216,7 +238,7 @@ function completeCreditCard($){
             Swal.fire({
                 title: 'Error al ingresar los datos',
                 icon: 'error',
-                showCancelButton: true,
+                showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Volver a ingresar'
@@ -228,6 +250,7 @@ function completeCreditCard($){
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
+                cancelButtonText: 'Cancelar',
                 confirmButtonText: 'Si, Confirmar'
                 }).then((result) => {
                     if (result.isConfirmed) {
